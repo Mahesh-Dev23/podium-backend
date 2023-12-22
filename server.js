@@ -12,9 +12,10 @@
  app.use(cors())
  app.use(express.json())
  app.use(express.urlencoded({extended:false}))
- app.use('/', (res,req)=> {
-    console.log('this is /')
- })
+
+//  app.use('/', (res, req)=> {
+//     // res.send(console.log('use/api/'))
+//  })
 
  app.use('/api/users', require('./routes/userRoutes'))
  app.use('/api/events', require('./routes/eventRoutes'))
@@ -141,45 +142,27 @@ io.on("connection", (socket) => {
         
         
     })
-    // socket.on('disconnect', (data)=>{
-    //     console.log(`${user.name} is disconnected! ${data}`)
-    //     io.in(user.room).emit('disconnected', user.name)
-    //     // console.log(data)
-    //     let newLoggedUser = []
-    //     loggedUsers.filter( res => { 
-    //         if(loggedUsers.includes(user.name)) return
-    //         if(res !== user.name ) return newLoggedUser.push(res)
-    //     })
-
-    //     loggedUsers = []
-    //     loggedUsers = newLoggedUser
-
-    //     io.in(user.room).emit('loggedUsers', loggedUsers)
-    // })
-   
-    // if(Object.keys(socket.data).length !== 0)
-    // console.log("socket data ", socket.data)
+ 
 }); 
 
- //io.in(roomData.room).emit("welcome", message)
-//  if(Object.keys(roomData).length !== 0){
-//     io.in(roomData.room).emit("go to", roomData.index)
-//  }
+ 
  
 
 
  // serve frontend
 
  if(process.env.NODE_ENV === 'production' ){
-    app.use(express.static(path.join(__dirname, '../frontend/build')))
-
-    app.get('*', (req, res) =>{ 
-        res.sendFile(__dirname, '../', 'frontend', 'build', 'index.html')
-    })
+    // app.use(express.static(path.join(__dirname, '../frontend/build')))
+    res.status(200).send("Welcome to Podium - DIY Virtual Meets")
+    // app.get('*', (req, res) =>{ 
+    //     // res.sendFile(__dirname, '../', 'frontend', 'build', 'index.html')
+    //     res.sendFile(__dirname, './',  'index.html')
+    // })
  }else{
     app.get('/', (req, res)=>{
         res.status(200).send("Welcome to Podium - DIY Virtual Meets")
         
+        // res.sendFile( __dirname, './',  'index.html')
     })
  }
 
