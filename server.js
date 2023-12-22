@@ -12,6 +12,9 @@
  app.use(cors())
  app.use(express.json())
  app.use(express.urlencoded({extended:false}))
+ app.use('/', (res,req)=> {
+    console.log('this is /')
+ })
 
  app.use('/api/users', require('./routes/userRoutes'))
  app.use('/api/events', require('./routes/eventRoutes'))
