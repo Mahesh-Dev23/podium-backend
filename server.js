@@ -16,9 +16,15 @@
  app.use(express.json())
  app.use(express.urlencoded({extended:false}))
 
-//  app.use('/', (res, req)=> {
-//     // res.send(console.log('use/api/'))
-//  })
+ app.use((req, res, next) => {
+    res.setHeader("Access-Control-Allow-Origin", "https://podium-demo-three.vercel.app");
+    res.header(
+      "Access-Control-Allow-Headers",
+      "Origin, X-Requested-With, Content-Type, Accept"
+    );
+    next();
+  });
+  
 
  app.use('https://podium-backend.vercel.app/api/users', require('./routes/userRoutes'))
  app.use('https://podium-backend.vercel.app/api/events', require('./routes/eventRoutes'))
