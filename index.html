@@ -11,6 +11,10 @@
             align-items: center;
         }
     </style>
+    <script>
+        fetch('https://podium-backend.vercel.app/api/users').then(res => console.log(res.status))
+        console.log('axios')
+    </script>
 </head>
 <body>
     <h3>Visit '/api/users' for users.</h3>

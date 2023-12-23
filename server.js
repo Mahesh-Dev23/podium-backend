@@ -17,8 +17,8 @@
 //     // res.send(console.log('use/api/'))
 //  })
 
- app.use('/api/users', require('./routes/userRoutes'))
- app.use('/api/events', require('./routes/eventRoutes'))
+ app.use('https://podium-backend.vercel.app/api/users', require('./routes/userRoutes'))
+ app.use('https://podium-backend.vercel.app/api/events', require('./routes/eventRoutes'))
 
  const httpServer = createServer(app)
 
