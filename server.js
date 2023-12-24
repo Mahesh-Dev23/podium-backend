@@ -10,7 +10,7 @@
  const connectDB = require('./config/db')
  const app = express()
  app.use(cors({
-    origin: '*',
+    origin: 'https://podium-backend.vercel.app',
     methods:['GET', 'POST', 'PUT', 'DELETE']
  }))
  app.use(express.json())
