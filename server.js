@@ -24,6 +24,7 @@
     // );
     res.header('Access-Control-Allow-Origin', '*');
     res.header('Access-Control-Allow-Headers', '*');
+    res.header('Content-Type', 'application/json');
     next();
   });
   
