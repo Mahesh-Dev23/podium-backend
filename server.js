@@ -9,28 +9,26 @@ const express = require('express')
  const PORT = process.env.PORT || 5000
  const connectDB = require('./config/db')
  const app = express()
- app.use(cors({
-    origin: '*',
-    methods:['GET', 'POST', 'PUT', 'DELETE']
- }))
+ app.use(cors())
  app.use(express.json())
  app.use(express.urlencoded({extended:false}))
 
- app.use((req, res, next) => {
-    // res.setHeader("Access-Control-Allow-Origin", "https://podium-demo-three.vercel.app");
-    // res.header(
-    //   "Access-Control-Allow-Headers",
-    //   "Origin, X-Requested-With, Content-Type, Accept"
-    // );
-    // res.header('Access-Control-Allow-Origin', 'https://podium-demo-three.vercel.app');
-    // res.header('Access-Control-Allow-Headers', '*');
-    // res.header('Access-Control-Allow-Credentials', 'true');
-    // res.header('Content-Type', 'application/json');
-    res.setHeader("Access-Control-Allow-Origin", "*");
-    res.setHeader("Access-Control-Allow-Methods", "POST, GET, PUT, DELETE");
-    res.setHeader("Access-Control-Allow-Headers", "Content-Type");
-    next();
-  });
+//  app.use((req, res, next) => {
+//     // res.setHeader("Access-Control-Allow-Origin", "https://podium-demo-three.vercel.app");
+//     // res.header(
+//     //   "Access-Control-Allow-Headers",
+//     //   "Origin, X-Requested-With, Content-Type, Accept"
+//     // );
+//     // res.header('Access-Control-Allow-Origin', 'https://podium-demo-three.vercel.app');
+//     // res.header('Access-Control-Allow-Headers', '*');
+//     // res.header('Access-Control-Allow-Credentials', 'true');
+//     // res.header('Content-Type', 'application/json');
+//     res.setHeader("Access-Control-Allow-Origin", "*");
+//     res.setHeader("Access-Control-Allow-Methods", "POST, GET, PUT, DELETE");
+//     res.setHeader("Access-Control-Allow-Headers", "Content-Type");
+    
+//     next();
+//   });
   
 
  app.use('https://podium-backend.vercel.app/api/users', require('./routes/userRoutes'))
