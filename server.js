@@ -1,4 +1,4 @@
- const express = require('express')
+const express = require('express')
  const { createServer } = require("http");
  const { Server } = require("socket.io")
  const path = require('path')
@@ -10,7 +10,7 @@
  const connectDB = require('./config/db')
  const app = express()
  app.use(cors({
-    origin: 'https://podium-demo-three.vercel.app',
+    origin: 'https://podium-backend.vercel.app',
     methods:['GET', 'POST', 'PUT', 'DELETE']
  }))
  app.use(express.json())
@@ -22,7 +22,7 @@
     //   "Access-Control-Allow-Headers",
     //   "Origin, X-Requested-With, Content-Type, Accept"
     // );
-    res.header('Access-Control-Allow-Origin', '*');
+    res.header('Access-Control-Allow-Origin', 'https://podium-backend.vercel.app');
     res.header('Access-Control-Allow-Headers', '*');
     res.header('Content-Type', 'application/json');
     next();
