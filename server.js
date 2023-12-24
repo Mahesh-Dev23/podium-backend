@@ -24,6 +24,7 @@ const express = require('express')
     // );
     res.header('Access-Control-Allow-Origin', 'https://podium-demo-three.vercel.app');
     res.header('Access-Control-Allow-Headers', '*');
+    res.header('Access-Control-Allow-Credentials', 'true');
     res.header('Content-Type', 'application/json');
     next();
   });
