@@ -74,7 +74,7 @@ const registerUser =  asyncHandler(async (req, res) =>{
 const loginUser =  asyncHandler(async (req, res) =>{
     const { email, password } = req.body
     const user = await User.findOne({email})
-    console.log("user controller")
+    console.log("user controller", req.body)
     // check user and passwords match
     if(user && (await bcrypt.compare(password, user.password))){
         console.log( "user: " + user._id + " exists.") // working

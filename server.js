@@ -12,7 +12,7 @@ const express = require('express')
  app.use(cors())
  app.use(express.json())
  app.use(express.urlencoded({extended:false}))
-
+// https://podium-backend.vercel.app
 //  app.use((req, res, next) => {
 //     // res.setHeader("Access-Control-Allow-Origin", "https://podium-demo-three.vercel.app");
 //     // res.header(
@@ -31,8 +31,8 @@ const express = require('express')
 //   });
   
 
- app.use('https://podium-backend.vercel.app/api/users', require('./routes/userRoutes'))
- app.use('https://podium-backend.vercel.app/api/events', require('./routes/eventRoutes'))
+ app.use('/api/users', require('./routes/userRoutes'))
+ app.use('/api/events', require('./routes/eventRoutes'))
 
  const httpServer = createServer(app)
 
@@ -189,8 +189,8 @@ io.on("connection", (socket) => {
 
 
 
-
-
-
  
 console.log("this is server...")
+
+
+// https://data.mongodb-api.com/app/data-tukjf/endpoint/data/v1
