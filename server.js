@@ -61,7 +61,7 @@ io.on("connection", (socket) => {
     socket.on('Logged In', (data)=> {
         
         
-        // console.log('Logged In ', data)
+        console.log('Logged In from https://podium-backend.vercel.app', data)
         user = data
         
 
