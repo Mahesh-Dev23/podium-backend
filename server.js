@@ -169,8 +169,8 @@ io.on("connection", (socket) => {
     // app.use(express.static(path.join(__dirname, '../frontend/build')))
     res.status(200).send("Welcome to Podium - DIY Virtual Meets")
     app.get('*', (req, res) =>{ 
-        // res.sendFile(__dirname, '../', 'frontend', 'build', 'index.html')
-        res.sendFile(__dirname, './',  'index.html')
+        res.sendFile(__dirname, '../', 'frontend', 'build', 'index.html')
+        // res.sendFile(__dirname, './',  'index.html')
     })
  }else{
     app.get('/', (req, res)=>{
