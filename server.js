@@ -12,6 +12,7 @@ const express = require('express')
  app.use(cors())
  app.use(express.json())
  app.use(express.urlencoded({extended:false}))
+ app.options('*', cors())
 // https://podium-backend.vercel.app
 //  app.use((req, res, next) => {
 //     // res.setHeader("Access-Control-Allow-Origin", "https://podium-demo-three.vercel.app");
