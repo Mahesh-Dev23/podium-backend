@@ -9,10 +9,25 @@ const express = require('express')
  const PORT = process.env.PORT || 5000
  const connectDB = require('./config/db')
  const app = express()
- app.use(cors())
+
+ var whitelist = ['https://podium-demo-three.vercel.app']
+ var corsOptions = {
+    origin: function (origin, callback) {
+          if (whitelist.indexOf(origin) !== -1) {
+          callback(null, true)
+          } else {
+          callback(new Error('Not allowed by CORS'))
+          }
+          }
+      }
+
+
+ app.use(cors(corsOptions))
  app.use(express.json())
  app.use(express.urlencoded({extended:false}))
- app.options('*', cors())
+ 
+ 
+ 
 // https://podium-backend.vercel.app
 //  app.use((req, res, next) => {
 //     // res.setHeader("Access-Control-Allow-Origin", "https://podium-demo-three.vercel.app");
