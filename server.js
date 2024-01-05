@@ -10,7 +10,7 @@ const express = require('express')
  const connectDB = require('./config/db')
  const app = express()
 
- const vercelToken = 'prj_Xi9d9cmhuiwAyPtbgde4eAiAjZF7'
+ 
  const whitelist = ['https://podium-demo-three.vercel.app', 'http://localhost:3000/']
  const corsOptions = {
     origin: function (origin, callback) {
@@ -21,7 +21,7 @@ const express = require('express')
           }
           },
     headers: {
-            Authorization: 'Bearer ' + vercelToken,
+            Authorization: 'Bearer ' + process.env.vercelToken,
         }
  }
 
