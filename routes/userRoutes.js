@@ -1,5 +1,6 @@
 const express = require('express')
 const router = express.Router()
+const cors = require('cors')
 const { registerUser, loginUser, getMe, editUser, getAllUsers, getpackage } = require('../controllers/userController')
 const { protect } = require('../middleware/authMiddleware')
 
@@ -11,7 +12,7 @@ const headers = {
 }
 
 router.post('/', registerUser)
-router.post('/login', loginUser)
+router.post('/login', cors(), loginUser)
 router.get('/me', protect, getMe)
 router.put('/:id',  editUser)
 router.get('/', protect, getAllUsers)
