@@ -22,7 +22,8 @@ const express = require('express')
           },
     headers: {
             Authorization: 'Bearer ' + process.env.vercelToken,
-        }
+        },
+    methods : "GET,HEAD,PUT,PATCH,POST,DELETE"
  }
 
 
