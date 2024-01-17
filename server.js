@@ -26,7 +26,7 @@ const express = require('express')
 //     methods : "GET,HEAD,PUT,PATCH,POST,DELETE"
 //  }
 
-
+ connectDB()   
  app.use(cors())
  app.use(express.json())
  app.use(express.urlencoded({extended:false}))
@@ -58,7 +58,7 @@ const express = require('express')
  const httpServer = createServer(app)
 
  
- connectDB()
+ 
 
  
  // ws scoket io data exhange ---------------------------------
