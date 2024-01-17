@@ -12,7 +12,7 @@ const headers = {
 }
 
 router.post('/', registerUser)
-router.post('/login', cors(headers), loginUser)
+router.post('/login', loginUser)
 router.get('/me', protect, getMe)
 router.put('/:id',  editUser)
 router.get('/', protect, getAllUsers)
